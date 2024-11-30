@@ -1,0 +1,52 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER_URL:http://10.211.55.5:30462/eureka/}
+  instance:
+    instance-id: ${spring.application.name}:${POD_IP:127.0.0.1}
+    prefer-ip-address: true
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+  api-docs:
+    path: /v3/api-docs
+
+spring:    
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://dev-44212899.okta.com/oauth2/default
+          jwk-set-uri: https://dev-44212899.okta.com/oauth2/default/v1/keys
+
+  datasource:
+    url: jdbc:mysql://${MYSQL_SERVER_NAME:localhost}:${MYSQL_SERVER_PORT:3306}/${MYSQL_DATABASE:cinema}
+    username: ${MYSQL_SERVER_USERNAME:cinema}
+    password: ${MYSQL_SERVER_PASSWORD:cinema}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 20
+      idle-timeout: 30000   
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      pool-name: HikariPool
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  kafka:
+    bootstrap-servers: 10.211.55.5:31443
+    consumer:
+      group-id: siv.cinema
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-deserializer: org.apache.kafka.common.serialization.StringSerializer
+      value-deserializer: org.apache.kafka.common.serialization.StringSerializer

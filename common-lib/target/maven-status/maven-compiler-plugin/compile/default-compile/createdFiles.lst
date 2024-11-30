@@ -1,0 +1,7 @@
+com/siv/common/messaging/MessageProducer.class
+com/siv/common/EventTopic.class
+com/siv/common/KafkaTopicConfig.class
+com/siv/common/Event.class
+com/siv/common/EventType.class
+com/siv/common/messaging/EventMapper.class
+com/siv/common/messaging/MessageConsumer.class

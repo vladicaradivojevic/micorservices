@@ -1,0 +1,7 @@
+/Users/vlada/Downloads/Cinema/common-lib/src/main/java/com/siv/common/Event.java
+/Users/vlada/Downloads/Cinema/common-lib/src/main/java/com/siv/common/EventTopic.java
+/Users/vlada/Downloads/Cinema/common-lib/src/main/java/com/siv/common/EventType.java
+/Users/vlada/Downloads/Cinema/common-lib/src/main/java/com/siv/common/KafkaTopicConfig.java
+/Users/vlada/Downloads/Cinema/common-lib/src/main/java/com/siv/common/messaging/EventMapper.java
+/Users/vlada/Downloads/Cinema/common-lib/src/main/java/com/siv/common/messaging/MessageConsumer.java
+/Users/vlada/Downloads/Cinema/common-lib/src/main/java/com/siv/common/messaging/MessageProducer.java
